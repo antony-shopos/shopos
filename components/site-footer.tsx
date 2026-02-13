@@ -31,7 +31,7 @@ export function SiteFooter() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  href="#"
+                  href="/use-cases"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
                   Use Cases

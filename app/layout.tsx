@@ -1,15 +1,23 @@
-import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import type { Metadata } from "next"
+import { Space_Grotesk, Inter } from "next/font/google"
 
-import './globals.css'
+import "./globals.css"
 
-const _geist = Geist({ subsets: ['latin'] })
-const _geistMono = Geist_Mono({ subsets: ['latin'] })
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-heading",
+})
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-body",
+})
 
 export const metadata: Metadata = {
-  title: 'ShopOS - Your creative team, always on',
-  description: 'AI workforce that can produce photos, edit videos, write copy, design, prep ads, and more. No coffee breaks. No lunch breaks.',
-  generator: 'v0.app',
+  title: "ShopOS - Your creative team, always on",
+  description:
+    "AI workforce that can produce photos, edit videos, write copy, design, prep ads, and more. No coffee breaks. No lunch breaks.",
+  generator: "shopos.ai",
 }
 
 export default function RootLayout({
@@ -19,7 +27,32 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="font-sans antialiased">{children}</body>
+      <body
+        className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased`}
+      >
+        {/* LEFT RAIL */}
+        <div
+          className="pointer-events-none fixed inset-y-0 z-50 w-px opacity-60"
+          style={{
+            left: "max(16px, calc((100vw - 1200px)/2))",
+            background:
+              "repeating-linear-gradient(to bottom, #cfcfcf 0px, #cfcfcf 12px, transparent 12px, transparent 28px)",
+          }}
+        />
+
+        {/* RIGHT RAIL */}
+        <div
+          className="pointer-events-none fixed inset-y-0 z-50 w-px opacity-60"
+          style={{
+            right: "max(16px, calc((100vw - 1200px)/2))",
+            background:
+              "repeating-linear-gradient(to bottom, #cfcfcf 0px, #cfcfcf 12px, transparent 12px, transparent 28px)",
+          }}
+        />
+
+
+        {children}
+      </body>
     </html>
   )
 }

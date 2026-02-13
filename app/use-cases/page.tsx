@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
   title: "Use Cases - ShopOS",
-  description: "Built for every brand type.",
 }
 
 const useCases = [
@@ -41,14 +40,14 @@ const useCases = [
   {
     title: "Food & Beverage",
     description:
-      "Recipe integration lifts AOV. Seasonal flavors need 3-week lead time. Your brand learns timing.",
+      "Recipe integration lifts AOV. Seasonal flavors need lead time. Your brand learns timing.",
     stat: "18% Higher AOV",
     image: "/use-cases/food.png",
   },
   {
     title: "Health & Fitness",
     description:
-      "Before/after works. Testimonials work better. Demo videos convert 2.4x more.",
+      "Before/after works. Testimonials work better. Demo videos convert more.",
     stat: "2.4x Conversion on Video",
     image: "/use-cases/fitness.png",
   },
@@ -59,54 +58,63 @@ export default function UseCasesPage() {
     <div className="min-h-screen bg-background">
       <SiteHeader />
 
-      {/* Hero */}
-      <section className="container mx-auto px-4 pt-20 pb-12 text-center">
+      {/* HERO */}
+      <section className="mx-auto w-full max-w-4xl px-6 pt-24 pb-16 text-center">
         <h1 className="text-4xl md:text-5xl font-semibold tracking-tight">
-          Built for <span className="italic text-blue-500">every</span> brand type
+          Built for{" "}
+          <span className="italic text-blue-500">every</span> brand type
         </h1>
 
-        <p className="mx-auto mt-6 max-w-2xl text-muted-foreground">
+        <p className="mx-auto mt-6 max-w-xl text-muted-foreground">
           ShopOS adapts to your category, customer, and growth stage.
           Stop guessing and start accumulating brand intelligence.
         </p>
       </section>
 
-      {/* Use case grid */}
-      <section className="container mx-auto px-4 pb-20">
-        <div className="grid gap-6 md:grid-cols-2">
+      {/* USE CASE GRID */}
+      <section className="mx-auto w-full max-w-6xl px-6 pb-24">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {useCases.map((item) => (
             <div
               key={item.title}
-              className="rounded-xl border bg-card p-6 shadow-sm"
+              className="rounded-2xl border bg-card p-5 shadow-sm transition hover:shadow-md"
             >
-              <div className="relative mb-4 h-56 w-full overflow-hidden rounded-lg bg-muted">
+              {/* Image */}
+              <div className="relative mb-4 h-48 md:h-56 w-full overflow-hidden rounded-xl bg-muted">
                 <Image
                   src={item.image}
                   alt={item.title}
                   fill
                   className="object-cover"
                 />
+
+                {/* fade overlay */}
+                <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background to-transparent" />
               </div>
 
-              <h3 className="font-semibold">{item.title}</h3>
+              <h3 className="text-sm font-semibold">
+                {item.title}
+              </h3>
 
-              <p className="mt-2 text-sm text-muted-foreground">
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 {item.description}
               </p>
 
-              <p className="mt-4 text-sm font-medium">{item.stat}</p>
+              <p className="mt-4 text-xs font-medium text-muted-foreground">
+                {item.stat}
+              </p>
             </div>
           ))}
         </div>
       </section>
 
       {/* CTA */}
-      <section className="container mx-auto px-4 pb-24 text-center">
+      <section className="mx-auto w-full max-w-4xl px-6 pb-24 text-center">
         <h2 className="text-2xl font-semibold">
           Ready to stop guessing?
         </h2>
 
-        <p className="mt-2 text-muted-foreground">
+        <p className="mt-3 text-muted-foreground">
           Join brands building their commerce intelligence today.
         </p>
 
