@@ -94,7 +94,7 @@ export function SiteFooter() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  href="#"
+                  href="/case-studies"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
                   Case Studies

@@ -13,7 +13,7 @@ export function SiteHeader() {
 
   const navItems = [
     { label: "Products", href: "/use-cases", hasDropdown: true, dropdownType: "products" },
-    { label: "Case Studies", href: "#" },
+    { label: "Case Studies", href: "/case-studies" },
     { label: "Resources", href: "/resources", hasDropdown: true, dropdownType: "resources" },
     { label: "Pricing", href: "/pricing" },
   ]
